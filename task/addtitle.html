@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Input Fields</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="flex-container">
+        <form>
+            <table>
+                <tr>
+                    <td>
+                        <button type="button" id="add">+ Add Input</button>
+                        <button id="submit">Submit</button>
+                        <br>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <script>
+
+        let addInputBtn = document.getElementById("add");
+        let sub = document.getElementById("submit");
+
+
+        addInputBtn.addEventListener("click", addInput);
+        sub.addEventListener("click", handleSubmit);
+
+        function addInput() {
+            const inp = document.createElement("input");
+            inp.classList.add("myInput");
+            inp.placeholder = 'Title';
+            inp.type = "text";
+            addInputBtn.parentElement.appendChild(inp);
+            // console.log(inp)
+
+            const Desc = document.createElement('input');
+            Desc.classList.add("myData");
+            Desc.placeholder = 'Description';
+            Desc.type = "text";
+            addInputBtn.parentElement.appendChild(Desc);
+            // console.log(Desc)
+
+            const nextLine = document.createElement("br");
+            addInputBtn.parentElement.appendChild(nextLine);
+            addInputBtn.parentElement.appendChild(nextLine);
+
+        }
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevents the form from submitting via the default action
+
+            // Select all input fields with class "myInput" and "myDescription"
+            const inputElements = document.querySelectorAll(".myInput");
+            const inputDescriptions = document.querySelectorAll(".myData");
+
+            // Create an array to store form data
+            const Data = [];
+
+            // Iterate through the input fields and collect their values along with descriptions
+            inputElements.forEach((input, index) => {
+                const description = inputDescriptions[index].value;
+                Data.push(`${input.value} - ${description}`);
+            });
+
+            // Display the collected form data in an alert
+            alert("Form Data:\n" + Data.join("\n"));
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btnclk">CLick</button>
+    <div id="disp">This is the example of javascript</div>
+
+    <Script>
+        document.getElementById("btnclk").addEventListener("click", function () {
+            var element = document.createElement('input');
+            element.type = 'text';
+            element.value = 'data';
+            element.id = '';
+
+
+            console.log(document.getElementById("disp").__proto__);
+            document.getElementById("disp").appendChild(element);
+        })
+    </Script>
+</body>
+
+</html>

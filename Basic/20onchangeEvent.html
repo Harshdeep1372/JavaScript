@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" class="val" name="val" value="1500" id="val">
+    <select name="quant" id="quant">
+
+    </select>
+    <div class="disp" id="disp">
+
+    </div>
+</body>
+<script>
+    let HTMLdata = ""
+    for (let index = 0; index < 10; index++) {
+        HTMLdata += '<option value="' + index + '">' + index + '<option>';
+        // console.log("HTMLdata");
+    }
+    document.getElementById("quant").innerHTML = HTMLdata;
+    // console.log(HTMLdata);
+    document.getElementById("quant").addEventListener("change", function () {
+        let inpValue = document.getElementById("val").value;
+        console.log("InpValue :", inpValue);
+        console.log("Quantity :", this.value);
+        let Amount = this.value * inpValue;
+        console.log(Amount);
+        document.getElementById("disp").innerHTML = " Total Amount is <b> " + Amount + " </b>"
+    })
+
+</script>
+
+</html>
