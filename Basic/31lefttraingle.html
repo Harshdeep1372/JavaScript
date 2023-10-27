@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="triangle">
+
+    </div>
+    <script>
+
+
+        function triangle() {
+            let rows = 5;
+            let triangleDiv = document.querySelector('#triangle');
+
+            for (let i = 0; i < rows; i++) {
+                let rowContent = '';
+
+                for (let j = 0; j < 2 * (rows - i) - 1; j++) {
+                    rowContent += "&nbsp; ";
+                }
+
+                for (let k = 0; k < 2 * i + 1; k++) {
+                    rowContent += "&nbsp;" + k + " ";
+                }
+
+                rowContent += "<br>";
+                triangleDiv.innerHTML += rowContent;
+            }
+        }
+
+        triangle();
+    </script>
+</body>
+
+</html>
