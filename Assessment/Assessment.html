@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <script>
+        function countOccurrences(numbers) {//create a function
+            const resultObject = {};
+
+            numbers.forEach(number => {
+                if (resultObject[number]) {
+                    resultObject[number]++;//counter for object
+                } else {
+                    resultObject[number] = 1;
+                }
+            });
+
+            return resultObject;
+        }
+
+    //user given values
+        const result = countOccurrences([1, 2, 2, 3]);//pass the array to function
+        const resul = countOccurrences([9, 9, 9, 99]);
+        const resu = countOccurrences([4, 3, 2, 1]);
+        console.log(result);
+        console.log(resul);
+        console.log(resu);
+
+    </script>
+</body>
+
+</html>
