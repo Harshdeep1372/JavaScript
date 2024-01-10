@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const quotes = [
+            "Never give up because you never know if the next try is going to be the one that works. - Mary Kay Ash",
+            "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill",
+            "The only way to do great work is to love what you do. - Steve Jobs",
+            "Believe you can and you're halfway there. - Theodore Roosevelt",
+            "The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt",
+
+        ];
+
+        function getRandomQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            return quotes[randomIndex];
+        }
+
+
+        console.log("Quote of the Day:");
+        console.log(getRandomQuote())
+    </script>
+
+</body>
+
+</html>
